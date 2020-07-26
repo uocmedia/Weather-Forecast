@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatGridListModule,
     MatSelectModule,
     MatButtonModule,
+    MatDividerModule,
     BrowserAnimationsModule,
     HttpClientModule,
   ],

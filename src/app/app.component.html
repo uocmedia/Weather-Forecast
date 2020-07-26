@@ -3,29 +3,40 @@
     <mat-card class="home-card">
       <mat-card-header>
         <div mat-card-avatar class="weather-header-image"></div>
-        <mat-card-title>Weather Forecast</mat-card-title>
-        <mat-card-subtitle>By city</mat-card-subtitle>
-        <mat-form-field>
-          <mat-label>City</mat-label>
-          <mat-select (selectionChange)="getWeatherUpdatedData($event)">
+        <mat-card-title class="mat-card-title-text"
+          >Weather Forecast</mat-card-title
+        >
+        <mat-card-subtitle class="mat-card-subtitle-text"
+          >By city</mat-card-subtitle
+        >
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field style="margin-inline-start: 60px;">
+          <mat-label style="font-size: 28px; font-weight: bold;"
+            >City</mat-label
+          >
+          <mat-select
+            (selectionChange)="getWeatherUpdatedData($event)"
+            style="width: 100%;"
+          >
             <mat-option *ngFor="let city of cities" [value]="city.value">
               {{ city.name }}
             </mat-option>
           </mat-select>
         </mat-form-field>
-      </mat-card-header>
-      <mat-card-content>
         <mat-grid-list cols="5">
           <mat-grid-tile *ngFor="let item of weatherForecasts">
             <p style="text-align: center;">
-              {{ item.datetime | date: "fullDate" }}
+              <span class="weatherDate">
+                {{ item.datetime | date: "fullDate" }}
+              </span>
               <br />
               <img
                 src="../assets/icons/{{ item.weather.icon }}.png"
                 alt="{{ item.weather.description }}"
               />
               <br />
-              {{ item.temp }} &#8451;
+              <span class="weatherTemp"> {{ item.temp }} &#8451; </span>
             </p>
           </mat-grid-tile>
         </mat-grid-list>
@@ -34,6 +45,7 @@
             mat-raised-button
             color="warn"
             (click)="getCurrentWeatherData()"
+            class="applyButton"
           >
             Apply
           </button>

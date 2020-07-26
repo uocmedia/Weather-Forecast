@@ -16,6 +16,7 @@
     }
     .home-card {
       max-width: 100%;
+      font-family: "Open Sans";
     }
   }
 }
@@ -27,4 +28,34 @@
 
 .example-button-row .mat-button-base {
   margin: 8px 8px 8px 0;
+}
+
+.mat-card-title-text {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.mat-card-subtitle-text {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.mat-option-text {
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.weatherDate {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.weatherTemp {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.applyButton {
+  font-size: 20px;
+  font-weight: bold;
 }
