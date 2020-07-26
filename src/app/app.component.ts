@@ -16,11 +16,19 @@ export class AppComponent {
     { name: 'Calgary', value: 'calgary' },
     { name: 'Vancouver', value: 'vancouver' },
   ];
+  public currentCity = '';
 
   constructor(private data: WeatherbitService) {}
 
   public getWeatherUpdatedData($event: any) {
     this.data.getWeatherData($event.value).subscribe((data) => {
+      this.weatherForecasts = data.data.slice(0, 5);
+      this.currentCity = $event.value;
+    });
+  }
+
+  public getCurrentWeatherData() {
+    this.data.getWeatherData(this.currentCity).subscribe((data) => {
       this.weatherForecasts = data.data.slice(0, 5);
     });
   }
