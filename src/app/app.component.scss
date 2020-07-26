@@ -1,0 +1,21 @@
+.dashboard-wrapper {
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+  .dashboard-column {
+    width: 100%;
+    .weather-audio-column {
+      display: flex;
+      align-items: top;
+      justify-content: space-between;
+      width: 100%;
+      .video-audio-card {
+        max-width: 98%;
+        min-height: 400px;
+      }
+    }
+    .home-card {
+      max-width: 100%;
+    }
+  }
+}
